@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:read_news/themes.dart';
 import 'package:read_news/widgets/business.dart' as business;
+import 'package:read_news/widgets/covid.dart' as covid;
 import 'package:read_news/widgets/edit.dart' as edit;
 import 'package:read_news/widgets/entertainment.dart' as enterntainment;
 import 'package:read_news/widgets/news.dart' as news;
@@ -20,7 +20,7 @@ class _HomeAppState extends State<HomeApp> with SingleTickerProviderStateMixin {
 
   @override
   void initState() {
-    controller = TabController(length: 7, vsync: this);
+    controller = TabController(length: 8, vsync: this);
     super.initState();
   }
 
@@ -60,7 +60,7 @@ class _HomeAppState extends State<HomeApp> with SingleTickerProviderStateMixin {
         backgroundColor: Color(0xFFFF6699),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 13, top: 10),
+            padding: const EdgeInsets.only(right: 13, top: 14),
             child: Icon(Icons.language, color: Colors.black),
           ),
         ],
@@ -68,13 +68,18 @@ class _HomeAppState extends State<HomeApp> with SingleTickerProviderStateMixin {
           isScrollable: true,
           controller: controller,
           tabs: [
-            Tab(child: Text("News", style: tabText)),
-            Tab(child: Text("Entertainment", style: tabText)),
-            Tab(child: Text("Sports", style: tabText)),
-            Tab(child: Text("Tech", style: tabText)),
-            Tab(child: Text("Busines", style: tabText)),
-            Tab(child: Text("Politic", style: tabText)),
-            Tab(child: Icon(Icons.edit, color: Colors.black)),
+            Tab(child: Text("News", style: TextStyle(color: Colors.black))),
+            Tab(child: Text("Covid-19", style: TextStyle(color: Colors.black))),
+            Tab(
+                child: Text("Entertainment",
+                    style: TextStyle(color: Colors.black))),
+            Tab(child: Text("Sports", style: TextStyle(color: Colors.black))),
+            Tab(
+                child:
+                    Text("Technology", style: TextStyle(color: Colors.black))),
+            Tab(child: Text("Busines", style: TextStyle(color: Colors.black))),
+            Tab(child: Text("Politic", style: TextStyle(color: Colors.black))),
+            Tab(child: Icon(Icons.edit, color: Colors.black, size: 17)),
             // travel explore, public, mode, language
           ],
         ),
@@ -83,6 +88,7 @@ class _HomeAppState extends State<HomeApp> with SingleTickerProviderStateMixin {
         controller: controller,
         children: [
           news.News(),
+          covid.Covid(),
           enterntainment.Entertainment(),
           sports.Sports(),
           tech.Tech(),

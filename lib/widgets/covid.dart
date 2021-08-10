@@ -2,10 +2,10 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:read_news/data/news.dart';
 
-Future<ReadNews> _fetchPolitical() async {
+Future<ReadNews> _fetchData() async {
   var dio = Dio();
   final response = await dio.get(
-      'https://newsapi.org/v2/everything?q=political&apiKey=07d00b8b18374b3286fcf7e91c762857');
+      'https://newsapi.org/v2/everything?q=ppkm&apiKey=07d00b8b18374b3286fcf7e91c762857');
   if (response.statusCode == 200) {
     return ReadNews.fromJson(response.data);
   } else {
@@ -13,26 +13,27 @@ Future<ReadNews> _fetchPolitical() async {
   }
 }
 
-class Political extends StatefulWidget {
-  const Political({Key key}) : super(key: key);
+class Covid extends StatefulWidget {
+  const Covid({Key key}) : super(key: key);
 
   @override
-  _PoliticalState createState() => _PoliticalState();
+  _CovidState createState() => _CovidState();
 }
 
-class _PoliticalState extends State<Political> {
-  Future<ReadNews> readPolitical;
+class _CovidState extends State<Covid> {
+  Future<ReadNews> readNews;
+
   @override
   void initState() {
-    readPolitical = _fetchPolitical();
     super.initState();
+    readNews = _fetchData();
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: FutureBuilder<ReadNews>(
-          future: readPolitical,
+          future: readNews,
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return ListView.separated(
