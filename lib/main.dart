@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:read_news/pages/shared.dart';
+import 'package:read_news/pages/pages.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
