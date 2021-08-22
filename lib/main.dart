@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:read_news/pages/home.dart';
-
-// costum color
-Color costum = Color(0xFFFF6699);
+import 'package:read_news/pages/shared.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

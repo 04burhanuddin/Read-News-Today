@@ -1,8 +1,6 @@
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:read_news/data/news.dart';
+part of 'widgets.dart';
 
-Future<ReadNews> _fetchData() async {
+Future<ReadNews> _fetchDataUS() async {
   var dio = Dio();
   final response = await dio.get(
       'https://newsapi.org/v2/top-headlines?country=us&apiKey=07d00b8b18374b3286fcf7e91c762857');
@@ -26,7 +24,7 @@ class _NewsState extends State<News> {
   @override
   void initState() {
     super.initState();
-    readNews = _fetchData();
+    readNews = _fetchDataUS();
   }
 
   @override

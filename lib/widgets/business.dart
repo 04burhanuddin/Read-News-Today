@@ -1,6 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
-import 'package:read_news/data/news.dart';
+part of 'widgets.dart';
 
 Future<ReadNews> _fetchBusiness() async {
   var dio = Dio();

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of 'widgets.dart';
 
 class EdiHalaman extends StatelessWidget {
   const EdiHalaman({Key key}) : super(key: key);

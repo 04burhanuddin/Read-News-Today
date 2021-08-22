@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:read_news/widgets/business.dart' as business;
-import 'package:read_news/widgets/covid.dart' as covid;
-import 'package:read_news/widgets/edit.dart' as edit;
-import 'package:read_news/widgets/entertainment.dart' as enterntainment;
-import 'package:read_news/widgets/news.dart' as news;
-import 'package:read_news/widgets/politic.dart' as political;
-import 'package:read_news/widgets/sports.dart' as sports;
-import 'package:read_news/widgets/tech.dart' as tech;
+part of 'pages.dart';
 
 class HomeApp extends StatefulWidget {
   const HomeApp({Key key}) : super(key: key);
@@ -87,14 +79,14 @@ class _HomeAppState extends State<HomeApp> with SingleTickerProviderStateMixin {
       body: TabBarView(
         controller: controller,
         children: [
-          news.News(),
-          covid.Covid(),
-          enterntainment.Entertainment(),
-          sports.Sports(),
-          tech.Tech(),
-          business.Business(),
-          political.Political(),
-          edit.EdiHalaman(),
+          News(),
+          Covid(),
+          Entertainment(),
+          Sports(),
+          Tech(),
+          Business(),
+          Political(),
+          EdiHalaman(),
         ],
       ),
     );
